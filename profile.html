@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles - SOCIAL-Z</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #02457A; /* Dark background color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #D6E8EE; /* Font color */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3498db; /* Blue border for male */
+        }
+
+        .female img {
+            border: 4px solid #ff6ea1; /* Pink border for female */
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="#"><img src="zs-removebg-preview (1).png" alt="Logo" style="height: 30px;"></a>
+            <span>SOCIAL-Z</span>
+        </div>
+        <div>
+            <a href="home.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="groups.html">GROUP</a>
+        </div>
+    </nav>
+
+<div class="container">
+    <!-- Profile for User 1 -->
+    <div class="profile">
+        <img src="man (1).png" alt="Profile Picture" class="male">
+        <h3>User ID: <span class="userId">12345</span></h3>
+        <h3>First Name: <span class="firstName">John</span></h3>
+        <button class="completeProfileBtn" onclick="showCompleteProfileForm(1)">Complete Profile</button>
+
+        <!-- Complete Profile Form for User 1 -->
+        <form class="completeProfileForm" action="index.php">
+            <label for="userAge">Age:</label>
+            <input type="text" id="userAge1" name="userAge" required>
+
+            <label for="hobbies">Hobbies:</label>
+            <select id="hobbies1" name="hobbies" multiple required>
+                <option value="dance">Dance</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+                <option value="painting">Painting</option>
+                <option value="cooking">Cooking</option>
+                <option value="planting">Planting</option>
+            </select>
+
+            <label for="bio">Tell us about yourself:</label>
+            <textarea id="bio1" name="bio" rows="4" required></textarea>
+
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <!-- Profile for User 2 -->
+    <div class="profile">
+        <img src="human (1).png" alt="Profile Picture" class="female">
+        <h3>User ID: <span class="userId">67890</span></h3>
+        <h3>First Name: <span class="firstName">Jane</span></h3>
+        <button class="completeProfileBtn" onclick="showCompleteProfileForm(2)">Complete Profile</button>
+
+        <!-- Complete Profile Form for User 2 -->
+        <form class="completeProfileForm" onsubmit="saveProfile(2); return false;">
+            <label for="userAge">Age:</label>
+            <input type="text" id="userAge2" name="userAge" required>
+
+            <label for="hobbies">Hobbies:</label>
+            <select id="hobbies2" name="hobbies" multiple required>
+                <option value="dance">Dance</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+                <option value="painting">Painting</option>
+                <option value="cooking">Cooking</option>
+                <option value="planting">Planting</option>
+            </select>
+
+            <label for="bio">Tell us about yourself:</label>
+            <textarea id="bio2" name="bio" rows="4" required></textarea>
+
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <!-- Profile for User 3 -->
+    <div class="profile">
+        <img src="man (1).png" alt="Profile Picture" class="male">
+        <h3>User ID: <span class="userId">54321</span></h3>
+        <h3>First Name: <span class="firstName">Michael</span></h3>
+        <button class="completeProfileBtn" onclick="showCompleteProfileForm(3)">Complete Profile</button>
+
+        <!-- Complete Profile Form for User 3 -->
+        <form class="completeProfileForm" onsubmit="saveProfile(3); return false;">
+            <label for="userAge">Age:</label>
+            <input type="text" id="userAge3" name="userAge" required>
+
+            <label for="hobbies">Hobbies:</label>
+            <select id="hobbies3" name="hobbies" multiple required>
+                <option value="dance">Dance</option>
+                <option value="music">Music</option>
+                <option value="art">Art</option>
+                <option value="gaming">Painting</option>
+                <option value="fitness">Cooking</option>
+                <option value="reading">Planting</option>
+                <option value="travel">Planting</option>
+                <option value="bussiness">Planting</option>
+            </select>
+
+            <label for="bio">Tell us about yourself:</label>
+            <textarea id="bio3" name="bio" rows="4" required></textarea>
+
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <div class="success-message" id="successMessage"></div>
+</div>
+
+<script>
+    function showCompleteProfileForm(userId) {
+        var form = document.querySelector('.profile:nth-child(' + userId + ') .completeProfileForm');
+        form.style.display = 'block';
+    }
+
+    function saveProfile(userId) {
+        var userAge = document.getElementById('userAge' + userId).value;
+        var hobbies = document.getElementById('hobbies' + userId).value;
+        var bio = document.getElementById('bio' + userId).value;
+
+        // Perform logic to save the profile data (you can use AJAX or send data to a server)
+
+        // Hide the form
+        var form = document.querySelector('.profile:nth-child(' + userId + ') .completeProfileForm');
+        form.style.display = 'none';
+
+        // Display success message
+        var successMessage = document.getElementById('successMessage');
+        successMessage.innerText = 'Profile saved successfully!';
+        successMessage.style.display = 'block';
+    }
+        // Now you can use the 'loggedInUsername' variable to prepopulate the form
+        document.addEventListener("DOMContentLoaded", function () {
+            // Example: prepopulating the username field
+            document.getElementById("username").value = loggedInUsername;
+        });
+</script>
+
+</body>
+</html>

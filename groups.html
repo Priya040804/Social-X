@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group - SOCIAL-Z</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #02457A; /* Dark background color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #D6E8EE; /* Font color */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="#"><img src="zs-removebg-preview (1).png" alt="Logo" style="height: 30px;"></a>
+            <span>SOCIAL-Z</span>
+        </div>
+        <div>
+            <a href="home.html">HOME</a>
+            <a href="login.html">LOGIN</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="groups.html">GROUP</a>
+        </div>
+    </nav>
+<div class="container">
+    <h2>Group - SOCIAL-Z</h2>
+
+    <!-- Users Table -->
+    <h3>All Users</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample data, replace with dynamic data from the profile page -->
+            <tr>
+                <td>12345</td>
+                <td>John</td>
+                <td><img src="man (1).png" alt="User Photo"></td>
+            </tr>
+            <tr>
+                <td>67890</td>
+                <td>Jane</td>
+                <td><img src="human (1).png" alt="User Photo"></td>
+            </tr>
+            <tr>
+                <td>54321</td>
+                <td>Michael</td>
+                <td><img src="man (1).png" alt="User Photo"></td>
+            </tr>
+            <!-- Add more rows for additional users -->
+        </tbody>
+    </table>
+
+    <!-- Hobbies Tables -->
+    <h3>Grouped by Hobbies</h3>
+
+    <!-- Dance Table -->
+    <h4>Dance</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like dance -->
+        </tbody>
+    </table>
+
+    <!-- Music Table -->
+    <h4>Music</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like music -->
+        </tbody>
+    </table>
+
+    <!-- Art Table -->
+    <h4>Art</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like art -->
+        </tbody>
+    </table>
+
+    <!-- Painting Table -->
+    <h4>Painting</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like painting -->
+        </tbody>
+    </table>
+
+    <!-- Cooking Table -->
+    <h4>Cooking</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like cooking -->
+        </tbody>
+    </table>
+
+    <!-- Planting Table -->
+    <h4>Planting</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows for users who like planting -->
+        </tbody>
+    </table>
+
+</div>
+<script>
+    // Function to make a PHP request and fetch user data
+    function fetchUserData() {
+        fetch('get_user_data.php')
+            .then(response => response.json())
+            .then(userData => {
+                populateAllUsersTable(userData);
+                groupUsersByHobbies(userData);
+            })
+            .catch(error => console.error('Error fetching user data:', error));
+    }
+
+    // Function to populate the allUsersTable
+    function populateAllUsersTable(userData) {
+        const allUsersTableBody = document.querySelector('#allUsersTable tbody');
+
+        userData.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.userId}</td>
+                <td>${user.username}</td>
+                <td><img src="${user.photo}" alt="User Photo"></td>
+            `;
+            allUsersTableBody.appendChild(row);
+        });
+    }
+
+    // Function to group users by hobbies
+    function groupUsersByHobbies(userData) {
+        const hobbies = {};
+
+        userData.forEach(user => {
+            user.hobbies.forEach(hobby => {
+                if (!hobbies[hobby]) {
+                    hobbies[hobby] = [];
+                }
+                hobbies[hobby].push(user);
+            });
+        });
+
+        // Create and populate tables for each hobby
+        Object.keys(hobbies).forEach(hobby => {
+            const hobbyTable = document.createElement('table');
+            hobbyTable.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Photo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${hobbies[hobby].map(user => `
+                        <tr>
+                            <td>${user.userId}</td>
+                            <td>${user.username}</td>
+                            <td><img src="${user.photo}" alt="User Photo"></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            `;
+            document.querySelector('.container').appendChild(hobbyTable);
+
+            // Add a heading for the hobby
+            const hobbyHeading = document.createElement('h4');
+            hobbyHeading.textContent = hobby;
+            document.querySelector('.container').appendChild(hobbyHeading);
+        });
+    }
+
+    // Call function to fetch user data
+    fetchUserData();
+</script>
+</body>
+
+
+</html>

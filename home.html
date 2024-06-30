@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIAL-Z</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #001B48; /* Dark background color */
+            color: #D6E8EE; /* Font color */
+        }
+
+        nav {
+            background-color: #02457A; /* Dark background color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #D6E8EE; /* Font color */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #018ABE; /* Dark background color */
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .photo {
+            width: 100%;
+            height: 50vh; /* Set the height as needed */
+            background: url('campaign-creators-pypeCEaJeZY-unsplash (1).jpg') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo:hover {
+            opacity: 0.6; /* Adjust the opacity value as needed */
+        }
+
+        .photo:hover::after {
+            content: "SOCIAL-Z";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 85px; /* Adjust as needed to cover the whole image */
+            font-weight: bold;
+            color: white; /* Font color */
+        }
+
+        .content {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #97CADB; /* Dark background color */
+            color: #D6E8EE; /* Font color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact {
+            float: left;
+            width: 30%;
+            padding: 10px;
+            background-color: #9999A1; /* Dark background color */
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div>
+        <a href="#"><img src="zs-removebg-preview (1).png" alt="Logo" style="height: 30px;"></a>
+        <span>SOCIAL-Z</span>
+    </div>
+    <div>
+        <a href="home.html">HOME</a>
+        <a href="login.html">LOGIN</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="groups.html">GROUP</a>
+    </div>
+</nav>
+
+<div class="photo"></div>
+
+<div class="container">
+    <div class="content">
+        <h2>Welcome to SOCIAL-Z</h2>
+        <p>SOCIAL-Z is a social media management system designed to streamline and enhance your social media presence. It helps you manage multiple social media accounts, schedule posts, track engagement, and analyze performance.</p>
+        <p><strong>Why do we need a Social Media Management System?</strong></p>
+        <p>A social media management system is essential for businesses and individuals looking to maintain a consistent and effective presence on social platforms. It enables efficient content planning, engagement tracking, and analytics, ultimately helping in building a stronger online presence and connecting with the audience.</p>
+    </div>
+</div>
+
+<div class="contact">
+    <h3>Contact Us</h3>
+    <p>Phone: +123456789</p>
+    <p>Email: info@socialz.com</p>
+</div>
+
+</body>
+</html>
